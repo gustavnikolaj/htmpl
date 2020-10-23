@@ -1,7 +1,5 @@
 # HTML Template
 
-Smallest meaningful example:
-
 ```html
 <!-- ./my-template.html -->
 <h1>Hello, <span tpl-text="name"></span>!</h1>
@@ -11,6 +9,11 @@ Smallest meaningful example:
 htmlTemplate.render("./my-template.html", { name: "World" });
 // => <h1>Hello, <span tpl-text="name">World</span>!</h1>
 ```
+
+### THIS IS A PROOF OF CONCEPT
+
+This module is not production ready, but only serves as a proof of concept for
+now.
 
 ## Features
 
