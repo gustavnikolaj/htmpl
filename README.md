@@ -142,3 +142,13 @@ point to the template file that you wish to extend.
 
 The link tag may not be nested under other elements, and may not be in a
 conditional.
+
+# References
+
+## Prior art
+
+There are without a doubt similar attempts on building something like this. I
+will add them here as I find them. I haven't yet found something that is
+appropriate, but they might have ideas that we can learn from.
+
+- [TAL - Template Attribute Language](https://pagetemplates.readthedocs.io/en/latest/tal.html)
