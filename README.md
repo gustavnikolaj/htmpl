@@ -15,6 +15,19 @@ htmlTemplate.render("./my-template.html", { name: "World" });
 This module is not production ready, but only serves as a proof of concept for
 now.
 
+Goals:
+
+- Should be valid HTML
+- Should have all the expected features of a templating language.
+- Should be possible to precompile them for improved performance in production.
+- Should be possible to partially precompile, flattening all the views (merging
+  in base layouts) and pass them to a build system which operates on HTML.
+  ([assetgraph-builder](https://github.com/assetgraph/assetgraph-builder))
+
+Ideas:
+
+- Could be reimplementable in client-side javascript.
+
 ## Features
 
 ### Plain HTML
