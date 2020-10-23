@@ -1,0 +1,13 @@
+<link rel="extends" href="_layout/default.html" />
+
+<h1>Blog Index</h1>
+
+<div tpl-for="articles">
+  <article>
+    <h2 tpl-text="title"></h2>
+    <p tpl-text="excerpt"></p>
+    <p>
+      <a tpl-attr="href: href">Read more...</a>
+    </p>
+  </article>
+</div>
