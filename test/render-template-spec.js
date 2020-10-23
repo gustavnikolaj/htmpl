@@ -24,6 +24,16 @@ describe("render-template", () => {
     );
   });
 
+  it("should render a template with a tpl-text binding with dot reference", () => {
+    expect(
+      renderTemplate(`<p>Hello, <span tpl-text="person.name"></span>!</p>`, {
+        person: { name: "World" },
+      }),
+      "to equal",
+      "<p>Hello, <span>World</span>!</p>"
+    );
+  });
+
   it("should render a template with both tpl-text and tpl-attr binding", () => {
     expect(
       renderTemplate(

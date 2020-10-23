@@ -65,15 +65,21 @@ const articles = [
 (async function () {
   const env = new TemplateEnvironment(path.resolve(__dirname, "views"));
   const outputDir = path.resolve(__dirname, "output");
+  const baseParams = {
+    title: "My cool website",
+  };
 
   {
-    const content = await env.render("index.html", { articles });
+    const content = await env.render("index.html", { ...baseParams, articles });
     await fs.mkdir(outputDir, { recursive: true });
     await fs.writeFile(path.resolve(outputDir, "index.html"), content, "utf-8");
   }
 
   {
-    const content = await env.render("about.html", {});
+    const content = await env.render("about.html", {
+      ...baseParams,
+      title: `About | ${baseParams.title}`,
+    });
     const outputFile = path.resolve(outputDir, "about/index.html");
     await fs.mkdir(path.dirname(outputFile), { recursive: true });
     await fs.writeFile(
@@ -89,7 +95,11 @@ const articles = [
       path.relative("/", `${article.href}/index.html`)
     );
     const outputFileDir = path.dirname(outputFile);
-    const content = await env.render("article.html", article);
+    const content = await env.render("article.html", {
+      ...baseParams,
+      article,
+      title: `${article.title} | ${baseParams.title}`,
+    });
     await fs.mkdir(outputFileDir, { recursive: true });
     await fs.writeFile(outputFile, content, "utf-8");
   }
